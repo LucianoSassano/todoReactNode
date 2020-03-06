@@ -9,6 +9,8 @@ export const getAll = async () => {
 };
 
 export const addTask = async (title, description) => {
+  console.log("entro");
+  
   fetch("http://localhost:3000/api/tasks/", {
     method: "POST",
     headers: {

@@ -41,7 +41,7 @@ const App = () => {
         name,
         description
       }
-      addTask(task)
+      addTask(task.name,task.description)
       task.id = tasks[tasks.length - 1].id + 1
       setTasks([...tasks, task])
       setIsModalOpened(false)
