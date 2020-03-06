@@ -2,15 +2,11 @@ export const getAll = async () => {
   const url = "http://localhost:3000/api/tasks/";
   const response = await fetch(url);
   const data = await response.json();
-  console.log(data.tasks);
-  
 
   return data;
 };
 
 export const addTask = async (title, description) => {
-  console.log("entro");
-  
   fetch("http://localhost:3000/api/tasks/", {
     method: "POST",
     headers: {
@@ -21,5 +17,18 @@ export const addTask = async (title, description) => {
       description: description,
       isDone: 0
     })
+  });
+};
+
+export const modifyTask = async task => {
+  console.log(task);
+  console.log(task.task_id);
+
+  fetch(`http://localhost:3000/api/tasks/${task.task_id}`, {
+    method: "PUT",
+    headers: {
+      "Content-type": "application/json"
+    },
+    body: JSON.stringify(task)
   });
 };

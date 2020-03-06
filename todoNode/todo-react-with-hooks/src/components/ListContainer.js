@@ -4,11 +4,11 @@ import List from './List';
 const ListsContainer = ({ tasks, editTask, changeTaskStatus }) => {
 
   const pendingTasks = () => {
-    return tasks.filter(task => !task.done)
+    return tasks.filter(task => !task.isDone)
   }
 
   const doneTasks = () => {
-    return tasks.filter(task => task.done)
+    return tasks.filter(task => task.isDone)
   }
 
   return (<>
