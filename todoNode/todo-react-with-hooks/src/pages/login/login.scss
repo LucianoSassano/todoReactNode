@@ -1,0 +1,34 @@
+.father-container {
+    display: flex;
+    max-width: 1920px;
+    width: 100%;
+    justify-content: center;
+    max-height: 1000px;
+    height: 100%;
+    position: fixed;
+    background-image: url("../../images/task-back.jpg");
+    background-size: cover;
+    font-family: 'Oswald';
+    align-items: center;
+  
+  
+    .form-class {
+      width: 100%;
+      max-width: 330px;
+      padding: 15px;
+      margin: auto;
+  
+      .title {
+        font-size: 25px;
+        color: rgb(31, 37, 41);
+      }
+      .btn {
+        background-color: rgb(31, 37, 41);
+        color: white;
+        font-size: 20px;
+      }
+      .btn:hover{
+          opacity: 0.9;
+      }
+    }
+  }

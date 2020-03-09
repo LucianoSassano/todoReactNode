@@ -1,0 +1,42 @@
+.father-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1920px;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-height: 1000px;
+  height: 100%;
+  position: fixed;
+  background-image: url("../../images/task-back.jpg");
+  background-size: cover;
+  font-family: 'Oswald';
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.father-container .form-class {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.father-container .form-class .title {
+  font-size: 25px;
+  color: #1f2529;
+}
+
+.father-container .form-class .btn {
+  background-color: #1f2529;
+  color: white;
+  font-size: 20px;
+}
+
+.father-container .form-class .btn:hover {
+  opacity: 0.9;
+}
+/*# sourceMappingURL=login.css.map */
