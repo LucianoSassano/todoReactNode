@@ -1,7 +1,14 @@
 export const getUsers = async () => {
-  const url = "http://localhost:3000/api/tasks/";
-  const response = await fetch(url);
-  const data = response.json();
+  const url = "http://localhost:3000/api/users/";
 
-  return data;
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    console.log(data.tasks);
+
+    return data.tasks;
+  } catch (err) {
+    console.error(err);
+  }
 };
