@@ -13,12 +13,7 @@ const Home = () => {
     };
     const [tasks, setTasks] = useState([]);
     const [form, setForm] = useState(initialFormState);
-    const [
-      setIsModalOpened,
-      isModalOpened,
-      modalData,
-      setModalData
-    ] = useModalWithData();
+    const [isModalOpened,setIsModalOpened,modalData,setModalData] = useModalWithData();
   
     const handleClickAddTask = () => {
       setForm(initialFormState);
