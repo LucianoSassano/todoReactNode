@@ -21,8 +21,9 @@ export const addTask = async (title, description) => {
 };
 
 export const modifyTask = async task => {
-  console.log(task);
-  console.log(task.task_id);
+  
+  console.log(task.isDone);
+  
 
   fetch(`http://localhost:3000/api/tasks/${task.task_id}`, {
     method: "PUT",
@@ -31,4 +32,6 @@ export const modifyTask = async task => {
     },
     body: JSON.stringify(task)
   });
+  
+  
 };

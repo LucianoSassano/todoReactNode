@@ -13,7 +13,7 @@ const Task = ( { task, onChangeState, onEditTask } ) => {
             <div className="col-12 col-sm-6">
               <button className="btn btn-outline-success"
                 onClick={() => onChangeState()} >
-                { task.done ? "Reiniciar" : "Finalizar"}
+                { task.isDone ? "Reiniciar" : "Finalizar"}
               </button>
             </div>
             <div className="col-12 col-sm-6">

@@ -4,7 +4,7 @@ import Form from "./components/Form";
 import ListsContainer from "./components/ListContainer";
 import CustomModal from "./components/common/CustomModal";
 import useModalWithData from "./hooks/useModalWithData";
-import { getAll, addTask, modifyTask} from "./services/DbService";
+import { getAll, addTask, modifyTask } from "./services/DbService";
 
 const App = () => {
   const initialFormState = {
@@ -30,12 +30,14 @@ const App = () => {
     const name = e.target.name;
 
     setForm({ ...form, [name]: value });
+    console.log(form);
+    
   };
   const handleSubmit = e => {
     e.preventDefault();
     const { name, description } = form;
     if (form.id) {
-      const newTasks = tasks.map(task => (task.id === form.id ? form : task));
+      const newTasks = tasks.map(task => (task.task === form.id ? form : task));
       setTasks(newTasks);
       setIsModalOpened(false);
     } else if (name && description) {
@@ -54,21 +56,26 @@ const App = () => {
   }, []);
 
   const changeTaskStatus = task => {
+    console.log(task.isDone);
+    
     if (task.isDone === 0) {
       task.isDone = 1;
     } else {
       task.isDone = 0;
     }
     console.log(task);
-    
-    modifyTask(task)
+
+    modifyTask(task);
+    window.location.reload();
   };
   const editTask = task => {
-    setForm(task);
-    setModalData(form);
+    console.log(task);
+    console.log(form);
+
+    // setForm(task);
+    // setModalData(form);
     setIsModalOpened(true);
-    //toma los datos que ya existen
-    modifyTask(task.task_id, task.title, task.description);
+    // modifyTask(task);
   };
   return (
     <div className="container">
